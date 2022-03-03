@@ -1,18 +1,18 @@
 
 let x = []
 let y = []
-
+let xSpeed = 2;
 let galaxy
 let boom
 
 function preload(){
   galaxy = loadImage("images/galaxy.png")
-  boom = loadSound("boom.mp3")
+  boom = loadSound("audio/boom.mp3")
 
 }
 
 function setup(){
-  frameRate(10);
+//  frameRate(8);
 
 createCanvas(windowWidth, windowHeight)
 imageMode(CENTER)
@@ -23,9 +23,9 @@ function draw(){
   let step = frameCount % 20;
   let angle = map(step, 0, 20, -PI / 4, PI / 4);
   background(0);
-  translate(50, 50);
-  let shear_factor = 1 / tan(PI / 2 - angle);
-  applyMatrix(1, 0, shear_factor, 1, 0, 0);
+  // translate(50, 50);
+  // let shear_factor = 1 / tan(PI / 2 - angle);
+  // applyMatrix(1, 0, shear_factor, 1, 0, 0);
 
 
   textSize(15)
@@ -33,7 +33,10 @@ function draw(){
   fill(255, 204, 0)
   for(let i=0; i < x.length; i++){
   image(galaxy, x[i], y[i], 60, 60)
-
+  x[i] = x[i] + xSpeed;
+  if(x[i] > windowWidth+ 20){
+    x[i] = 0;
+  }
 
 }
 }
