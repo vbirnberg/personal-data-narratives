@@ -7,7 +7,7 @@ let boom
 
 function preload(){
   galaxy = loadImage("images/galaxy.png")
-  boom = loadSound("audio/boom.mp3")
+  boom = loadSound("boom.mp3")
 
 }
 
