@@ -41,7 +41,7 @@ function draw(){
   if(x[i] > windowWidth+ 20){
     x[i] = 0;
 
-
+  image(star, mouseX, mouseY, mouseX, 50)
 
 }
 }
